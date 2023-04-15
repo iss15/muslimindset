@@ -14,8 +14,7 @@ app.use(express.static("public"))                          //PUT ALL CSS FILES I
 
 
 //CONNECTING TO THE ONLINE HOSTED DB
-mongoose.connect("mongodb://127.0.0.1:27017/muslimindsetDB")
-//mongoose.connect(process.env.MURL+"/muslimindsetDB")
+mongoose.connect(process.env.MURL+"/muslimindsetDB")
 
 const userSchema = new mongoose.Schema({
     username: String,
@@ -68,7 +67,7 @@ app.route("/sign-up")
 //LOGIN ROUTE
 app.route("/login")
     .get((req,res)=>{
-        res.render(login)
+        res.render("login/login")
     })
     .post((req,res)=>{
         console.log(req.body.username)
