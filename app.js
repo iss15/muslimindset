@@ -3,6 +3,7 @@ require("dotenv").config()
 const express=require("express")
 const bodyParser=require("body-parser")
 const mongoose=require("mongoose")
+const md5=require("md5")
 
 const app=express()
 
@@ -13,7 +14,8 @@ app.use(express.static("public"))                          //PUT ALL CSS FILES I
 
 
 //CONNECTING TO THE ONLINE HOSTED DB
-mongoose.connect(process.env.MURL+"/muslimindsetDB")
+mongoose.connect("mongodb://127.0.0.1:27017/muslimindsetDB")
+//mongoose.connect(process.env.MURL+"/muslimindsetDB")
 
 const userSchema = new mongoose.Schema({
     username: String,
@@ -23,6 +25,15 @@ const userSchema = new mongoose.Schema({
 
 //CREATING USERS COLLECTION
 const User= mongoose.model("User", userSchema)
+
+////////////////CREATE NEW USER
+const newUser= new User({
+    username:"ss",
+    email:"aa",
+    password:md5("123password")
+})
+
+newUser.save()
 
 //ROOT ROUTE
 app.route("/")
@@ -48,16 +59,20 @@ app.route("/sign-up")
         const newUser= new User({
             username:req.body.username,
             email:req.body.email,
-            password:req.body.password
+            password:md5(req.body.password)
         })
 
-        newUser.save
+        newUser.save()
     })
 
 //LOGIN ROUTE
 app.route("/login")
-    .get()
-    .post()
+    .get((req,res)=>{
+        res.render(login)
+    })
+    .post((req,res)=>{
+        console.log(req.body.username)
+    })
 
 
 
