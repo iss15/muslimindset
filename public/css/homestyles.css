@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+html,body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+}
+header{
+    width: 100%;
+    height: 100vh;
+   /* background-attachment: fixed;*/
+}
+.content{
+    width: 100% ;
+    margin:4em auto;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: justify;
+}
+.logo{
+   float: left;
+    margin: 16px 36px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    flex-grow:1;
+}
+
+nav{
+    position:fixed;
+    background: rgba(0,0,0,0);
+    width:100%;
+    height: 68.8px;
+    z-index: 100000;
+    transition:0.5s;
+    display:flex;
+
+
+}
+
+.liste{
+    flex-grow:1;
+}
+.basmala{
+    flex-grow:1;
+}
+nav ul{
+    list-style: none;
+    overflow: hidden;
+    color: white;
+    padding: 0;
+    text-align:center;
+    margin: 0;
+
+}
+
+nav.black{
+    background: #201B25;
+
+}
+nav ul li{
+    display: inline-block;
+    padding: 20px;
+
+}
+nav ul li a{
+    text-decoration: none;
+    color:white;
+    font-size:18px;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease-in-out; /* ???*/
+
+}
+nav a:hover{
+    color:#bc9794;
+}
+
+p.aya{
+    font-family: 'Poppins', sans-serif;
+    font-size:50px;
+    color: #222;
+    color: #fff;
+    padding-bottom: 50px;
+}
+.hero{
+    height: 100vh;
+    display:flex;
+   justify-content: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+.hero-container{
+    padding-top:150px;
+    text-align: center;
+}
+.hero-container p{
+    color:white;
+}
+.aya_arabic p{
+    font-family: 'Amiri', serif;
+    font-weight: 700;
+    font-size:50px;
+}
+.aya_english p{
+
+    font-weight: 400;
+    font-size:20px;
+}
+.welcome_msg{
+    padding-top:100px
+}
